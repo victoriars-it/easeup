@@ -42,6 +42,9 @@
     const breathingResetButton =
         document.getElementById("breathing-reset-button");
 
+    const musicList =
+        document.getElementById("music-list");
+
     // =========================
     // Mensagens motivacionais
     // =========================
@@ -401,8 +404,8 @@
 
         const currentPhase =
             selectedTechnique.phases[
-                breathingPhaseIndex %
-                  selectedTechnique.phases.length
+            breathingPhaseIndex %
+            selectedTechnique.phases.length
             ];
 
         breathingCircle.className = "breathing-circle";
@@ -444,6 +447,157 @@
     );
 
     // =========================
+    // Biblioteca musical
+    // =========================
+
+    const musicTracks = [
+        {
+            id: "rain",
+            title: "Chuva Suave",
+            description:
+                "Som contínuo de chuva para relaxamento e foco.",
+            duration: "60 min",
+            audio:
+                "assets/audio/music/chuva.mp3"
+        },
+
+        {
+            id: "ocean",
+            title: "Ondas do Oceano",
+            description:
+                "Movimento das ondas para sensação de tranquilidade.",
+            duration: "60 min",
+            audio:
+                "assets/audio/music/oceano.mp3"
+        },
+
+        {
+            id: "forest",
+            title: "Floresta Natural",
+            description:
+                "Pássaros e sons da natureza.",
+            duration: "45 min",
+            audio:
+                "assets/audio/music/floresta.mp3"
+        },
+
+        {
+            id: "white-noise",
+            title: "Ruído Branco",
+            description:
+                "Ideal para concentração e estudos.",
+            duration: "120 min",
+            audio:
+                "assets/audio/music/ruido-branco.mp3"
+        },
+
+        {
+            id: "piano",
+            title: "Piano Relaxante",
+            description:
+                "Música instrumental suave.",
+            duration: "50 min",
+            audio:
+                "assets/audio/music/piano.mp3"
+        }
+    ];
+
+    const favoriteTracks =
+        JSON.parse(
+            localStorage.getItem(
+                "easeup-favorites"
+            )
+        ) || [];
+
+    function renderMusicLibrary() {
+        if (!musicList) return;
+
+        musicList.innerHTML = "";
+
+        musicTracks.forEach((track) => {
+            const card =
+                document.createElement("article");
+
+            const isFavorite =
+                favoriteTracks.includes(track.id);
+
+            card.className = "music-item";
+
+            card.innerHTML = `
+            <h3 class="music-title">
+                ${track.title}
+            </h3>
+
+            <p class="music-description">
+                ${track.description}
+            </p>
+
+            <p class="music-duration">
+                Duração: ${track.duration}
+            </p>
+
+            <audio controls>
+                <source
+                    src="${track.audio}"
+                    type="audio/mpeg"
+                >
+                Seu navegador não suporta áudio.
+            </audio>
+
+            <button
+                class="btn-primary favorite-button
+                ${isFavorite ? "active" : ""}"
+                data-track-id="${track.id}"
+            >
+                ${isFavorite ? "★ Favoritado" : "☆ Favoritar"}
+            </button>
+        `;
+
+            musicList.appendChild(card);
+        });
+
+        setupFavoriteButtons();
+    }
+
+    function setupFavoriteButtons() {
+        const buttons =
+            document.querySelectorAll(
+                ".favorite-button"
+            );
+
+        buttons.forEach((button) => {
+            button.addEventListener(
+                "click",
+                () => {
+                    const trackId =
+                        button.dataset.trackId;
+
+                    const index =
+                        favoriteTracks.indexOf(trackId);
+
+                    if (index >= 0) {
+                        favoriteTracks.splice(
+                            index,
+                            1
+                        );
+                    } else {
+                        favoriteTracks.push(trackId);
+                    }
+
+                    localStorage.setItem(
+                        "easeup-favorites",
+                        JSON.stringify(
+                            favoriteTracks
+                        )
+                    );
+
+                    renderMusicLibrary();
+                }
+            );
+        });
+    }
+
+    // =========================
     // Inicialização
     // =========================
 
@@ -454,6 +608,7 @@
     renderMeditations();
     renderBreathingTechniques();
     updateSelectedBreathingTechnique();
+    renderMusicLibrary();
 
     themeButton.addEventListener("click", toggleTheme);
 

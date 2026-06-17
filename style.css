@@ -357,6 +357,50 @@ button:focus-visible {
 }
 
 /* =========================
+   Biblioteca musical
+========================= */
+
+.music-item {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 16px rgba(124, 107, 196, 0.08);
+}
+
+.music-item:hover {
+    box-shadow: 0 6px 24px rgba(124, 107, 196, 0.15);
+}
+
+.music-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.music-description {
+    margin-top: 8px;
+    color: var(--text-secondary);
+}
+
+.music-duration {
+    margin-top: 8px;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.music-item audio {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.favorite-button {
+    margin-top: 14px;
+}
+
+.favorite-button.active {
+    background: #f59e0b;
+}
+
+/* =========================
    Responsividade
 ========================= */
 
