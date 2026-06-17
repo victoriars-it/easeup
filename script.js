@@ -15,6 +15,32 @@
     const navigationLinks = document.querySelectorAll("[data-nav]");
     const meditationList =
         document.getElementById("meditation-list");
+    const breathingList =
+        document.getElementById("breathing-list");
+
+    const breathingPlayer =
+        document.getElementById("breathing-player");
+
+    const breathingTechniqueTitle =
+        document.getElementById("breathing-technique-title");
+
+    const breathingTechniqueDescription =
+        document.getElementById("breathing-technique-description");
+
+    const breathingCircle =
+        document.getElementById("breathing-circle");
+
+    const breathingPhase =
+        document.getElementById("breathing-phase");
+
+    const breathingTimer =
+        document.getElementById("breathing-timer");
+
+    const breathingStartButton =
+        document.getElementById("breathing-start-button");
+
+    const breathingResetButton =
+        document.getElementById("breathing-reset-button");
 
     // =========================
     // Mensagens motivacionais
@@ -225,6 +251,199 @@
     }
 
     // =========================
+    // Exercícios de respiração guiada
+    // =========================
+
+    const breathingTechniques = [
+        {
+            title: "Respiração 4-7-8",
+            description:
+                "Técnica indicada para relaxamento. Inspire por 4 segundos, segure por 7 e expire por 8.",
+            phases: [
+                { label: "Inspire", duration: 4, className: "inhale" },
+                { label: "Segure", duration: 7, className: "hold" },
+                { label: "Expire", duration: 8, className: "exhale" }
+            ]
+        },
+        {
+            title: "Respiração Quadrada",
+            description:
+                "Também conhecida como Box Breathing. Ajuda no foco e na regulação emocional.",
+            phases: [
+                { label: "Inspire", duration: 4, className: "inhale" },
+                { label: "Segure", duration: 4, className: "hold" },
+                { label: "Expire", duration: 4, className: "exhale" },
+                { label: "Segure", duration: 4, className: "hold" }
+            ]
+        },
+        {
+            title: "Respiração Diafragmática",
+            description:
+                "Estimula a respiração profunda usando o abdômen, auxiliando na redução da ansiedade.",
+            phases: [
+                { label: "Inspire", duration: 4, className: "inhale" },
+                { label: "Segure", duration: 2, className: "hold" },
+                { label: "Expire", duration: 6, className: "exhale" }
+            ]
+        },
+        {
+            title: "Respiração Calmante 5-5",
+            description:
+                "Prática simples e equilibrada: inspire por 5 segundos e expire por 5 segundos.",
+            phases: [
+                { label: "Inspire", duration: 5, className: "inhale" },
+                { label: "Expire", duration: 5, className: "exhale" }
+            ]
+        },
+        {
+            title: "Respiração Energizante",
+            description:
+                "Técnica curta para recuperar presença e disposição durante o dia.",
+            phases: [
+                { label: "Inspire", duration: 3, className: "inhale" },
+                { label: "Segure", duration: 1, className: "hold" },
+                { label: "Expire", duration: 3, className: "exhale" }
+            ]
+        }
+    ];
+
+    let selectedBreathingIndex = 0;
+    let breathingPhaseIndex = 0;
+    let breathingElapsedSeconds = 0;
+    let breathingTimeout = null;
+    let breathingTimerInterval = null;
+
+    function renderBreathingTechniques() {
+        if (!breathingList) return;
+
+        breathingList.innerHTML = "";
+
+        breathingTechniques.forEach((technique, index) => {
+            const button = document.createElement("button");
+
+            button.className = "breathing-item";
+            button.type = "button";
+
+            button.innerHTML = `
+                <h3 class="breathing-item-title">
+                    ${technique.title}
+                </h3>
+
+                <p class="breathing-item-description">
+                    ${technique.description}
+                </p>
+            `;
+
+            button.addEventListener("click", () => {
+                selectedBreathingIndex = index;
+                resetBreathing();
+                updateSelectedBreathingTechnique();
+                updateBreathingCardsState();
+                breathingPlayer.classList.remove("section-hidden");
+            });
+
+            breathingList.appendChild(button);
+        });
+
+        updateBreathingCardsState();
+    }
+
+    function updateSelectedBreathingTechnique() {
+        const selectedTechnique =
+            breathingTechniques[selectedBreathingIndex];
+
+        breathingTechniqueTitle.textContent =
+            selectedTechnique.title;
+
+        breathingTechniqueDescription.textContent =
+            selectedTechnique.description;
+    }
+
+    function updateBreathingCardsState() {
+        const breathingCards =
+            document.querySelectorAll(".breathing-item");
+
+        breathingCards.forEach((card, index) => {
+            card.classList.toggle(
+                "active",
+                index === selectedBreathingIndex
+            );
+        });
+    }
+
+    function formatBreathingTime(seconds) {
+        const minutes =
+            Math.floor(seconds / 60);
+
+        const remainingSeconds =
+            seconds % 60;
+
+        return `${String(minutes).padStart(2, "0")}:${String(
+            remainingSeconds
+        ).padStart(2, "0")}`;
+    }
+
+    function startBreathing() {
+        resetBreathing();
+
+        breathingTimerInterval = setInterval(() => {
+            breathingElapsedSeconds++;
+            breathingTimer.textContent =
+                formatBreathingTime(breathingElapsedSeconds);
+        }, 1000);
+
+        runBreathingPhase();
+    }
+
+    function runBreathingPhase() {
+        const selectedTechnique =
+            breathingTechniques[selectedBreathingIndex];
+
+        const currentPhase =
+            selectedTechnique.phases[
+                breathingPhaseIndex %
+                  selectedTechnique.phases.length
+            ];
+
+        breathingCircle.className = "breathing-circle";
+        breathingCircle.classList.add(currentPhase.className);
+
+        breathingPhase.textContent =
+            currentPhase.label;
+
+        breathingPhaseIndex++;
+
+        breathingTimeout = setTimeout(
+            runBreathingPhase,
+            currentPhase.duration * 1000
+        );
+    }
+
+    function resetBreathing() {
+        clearTimeout(breathingTimeout);
+        clearInterval(breathingTimerInterval);
+
+        breathingTimeout = null;
+        breathingTimerInterval = null;
+        breathingPhaseIndex = 0;
+        breathingElapsedSeconds = 0;
+
+        breathingTimer.textContent = "00:00";
+        breathingPhase.textContent = "Pronto";
+        breathingCircle.className = "breathing-circle";
+    }
+
+    breathingStartButton.addEventListener(
+        "click",
+        startBreathing
+    );
+
+    breathingResetButton.addEventListener(
+        "click",
+        resetBreathing
+    );
+
+    // =========================
     // Inicialização
     // =========================
 
@@ -233,6 +452,8 @@
     setupNavigation();
     loadInitialSectionFromHash();
     renderMeditations();
+    renderBreathingTechniques();
+    updateSelectedBreathingTechnique();
 
     themeButton.addEventListener("click", toggleTheme);
 

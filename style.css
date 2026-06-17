@@ -276,6 +276,87 @@ button:focus-visible {
 }
 
 /* =========================
+   Exercícios de respiração
+========================= */
+
+.breathing-item {
+    background: var(--card);
+    border: none;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 2px 16px rgba(124, 107, 196, 0.08);
+    cursor: pointer;
+}
+
+.breathing-item:hover,
+.breathing-item.active {
+    box-shadow: 0 6px 24px rgba(124, 107, 196, 0.15);
+    background: var(--lavender);
+}
+
+.breathing-item-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.breathing-item-description {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.breathing-circle {
+    width: 190px;
+    height: 190px;
+    margin: 28px auto 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-soft), var(--accent));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: transform 1s ease-in-out;
+    box-shadow: 0 8px 32px rgba(124, 107, 196, 0.24);
+}
+
+.breathing-circle.inhale {
+    transform: scale(1.25);
+}
+
+.breathing-circle.hold {
+    transform: scale(1.12);
+}
+
+.breathing-circle.exhale {
+    transform: scale(0.88);
+}
+
+.breathing-timer {
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.btn-secondary {
+    background: var(--text-secondary);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    opacity: 0.85;
+}
+
+/* =========================
    Responsividade
 ========================= */
 
