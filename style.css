@@ -236,6 +236,46 @@ button:focus-visible {
 }
 
 /* =========================
+   Cards de meditação
+========================= */
+
+.meditation-item {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 16px rgba(124, 107, 196, 0.08);
+}
+
+.meditation-item:hover {
+    box-shadow: 0 6px 24px rgba(124, 107, 196, 0.15);
+}
+
+.meditation-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.meditation-description {
+    margin-top: 8px;
+    color: var(--text-secondary);
+}
+
+.meditation-duration {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+.meditation-item audio {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.complete-session-button {
+    margin-top: 16px;
+}
+
+/* =========================
    Responsividade
 ========================= */
 
