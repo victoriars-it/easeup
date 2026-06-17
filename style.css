@@ -1,0 +1,244 @@
+/* =========================
+   Variáveis globais do tema
+========================= */
+
+:root {
+  --lavender: #e8e0f0;
+  --blue-light: #d4e8f7;
+  --green-light: #e8f4e8;
+  --accent: #7c6bc4;
+  --accent-soft: #a594e0;
+  --bg: #f4f0fa;
+  --card: #ffffff;
+  --text: #2d2d3a;
+  --text-secondary: #6b6b80;
+}
+
+/* =========================
+   Tema escuro
+========================= */
+
+[data-theme="dark"] {
+  --lavender: #2a2440;
+  --blue-light: #1e2a3a;
+  --green-light: #1e3328;
+  --accent: #a594e0;
+  --accent-soft: #7c6bc4;
+  --bg: #1a1625;
+  --card: #252035;
+  --text: #e8e0f0;
+  --text-secondary: #a8a8c0;
+}
+
+/* =========================
+   Reset básico e base visual
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: linear-gradient(135deg, var(--bg), var(--blue-light), var(--lavender));
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+button,
+a {
+  transition: 0.2s ease;
+}
+
+/* =========================
+   Acessibilidade
+========================= */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  left: 10px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* =========================
+   Cabeçalho e navegação
+========================= */
+
+.logo-text {
+  color: var(--accent);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent);
+}
+
+.theme-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.theme-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================
+   Seção inicial
+========================= */
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--lavender), var(--blue-light), #f0e8fa);
+}
+
+[data-theme="dark"] .gradient-bg {
+  background: linear-gradient(135deg, #2a2440, #1e2a3a, #251f3a);
+}
+
+/* =========================
+   Cards e botões
+========================= */
+
+.app-card {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(124, 107, 196, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.app-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(124, 107, 196, 0.15);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--accent-soft);
+}
+
+/* =========================
+   Ícones dos cards
+========================= */
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.icon-box svg {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+}
+
+.icon-box.lavender {
+  background: var(--lavender);
+}
+
+.icon-box.blue {
+  background: var(--blue-light);
+}
+
+.icon-box.green {
+  background: var(--green-light);
+}
+
+/* =========================
+   Bloco de benefícios
+========================= */
+
+.stat-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-value {
+  color: var(--accent);
+}
+
+/* =========================
+   Animações suaves
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* =========================
+   Responsividade
+========================= */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
