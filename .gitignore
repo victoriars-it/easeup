@@ -1,0 +1,15 @@
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependências futuras
+node_modules/
+
+# Variáveis de ambiente
+.env
