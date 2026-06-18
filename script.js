@@ -45,6 +45,12 @@
     const musicList =
         document.getElementById("music-list");
 
+    const sessionsStat =
+        document.getElementById("sessions-stat");
+
+    const favoritesStat =
+        document.getElementById("favorites-stat");
+
     // =========================
     // Mensagens motivacionais
     // =========================
@@ -243,6 +249,8 @@
                         stats.sessions
                     );
 
+                    updateStatistics();
+
                     alert(
                         "Sessão registrada com sucesso!"
                     );
@@ -404,8 +412,8 @@
 
         const currentPhase =
             selectedTechnique.phases[
-            breathingPhaseIndex %
-            selectedTechnique.phases.length
+                breathingPhaseIndex %
+                    selectedTechnique.phases.length
             ];
 
         breathingCircle.className = "breathing-circle";
@@ -590,11 +598,42 @@
                             favoriteTracks
                         )
                     );
+                    updateStatistics();
 
                     renderMusicLibrary();
                 }
             );
         });
+    }
+
+    // =========================
+    // Estatísticas do usuário
+    // =========================
+
+    function updateStatistics() {
+        if (!sessionsStat || !favoritesStat) {
+            return;
+        }
+
+        const sessions =
+            Number(
+                localStorage.getItem(
+                    "easeup-sessions"
+                )
+            ) || 0;
+
+        const favorites =
+            JSON.parse(
+                localStorage.getItem(
+                    "easeup-favorites"
+                )
+            ) || [];
+
+        sessionsStat.textContent =
+            sessions;
+
+        favoritesStat.textContent =
+            favorites.length;
     }
 
     // =========================
@@ -609,6 +648,7 @@
     renderBreathingTechniques();
     updateSelectedBreathingTechnique();
     renderMusicLibrary();
+    updateStatistics();
 
     themeButton.addEventListener("click", toggleTheme);
 
