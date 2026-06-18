@@ -101,6 +101,10 @@ button:focus-visible {
     color: var(--accent);
 }
 
+.nav-link.active {
+    font-weight: 700;
+}
+
 .theme-button {
     background: transparent;
     border: none;
@@ -413,5 +417,33 @@ button:focus-visible {
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .gradient-bg h2 {
+        font-size: 2rem;
+    }
+
+    .app-card {
+        padding: 1rem;
+    }
+
+    .breathing-circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* =========================
+   Acessibilidade - redução de movimento
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
     }
 }

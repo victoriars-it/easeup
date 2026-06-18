@@ -74,24 +74,58 @@
     // =========================
 
     function applySavedTheme() {
-        const savedTheme = localStorage.getItem("easeup-theme");
+        const savedTheme =
+            localStorage.getItem(
+                "easeup-theme"
+            );
 
         if (savedTheme === "dark") {
-            root.setAttribute("data-theme", "dark");
+            root.setAttribute(
+                "data-theme",
+                "dark"
+            );
+
+            themeButton.setAttribute(
+                "aria-pressed",
+                "true"
+            );
         }
     }
 
     function toggleTheme() {
-        const isDark = root.getAttribute("data-theme") === "dark";
+        const isDark =
+            root.getAttribute("data-theme") === "dark";
 
         if (isDark) {
             root.removeAttribute("data-theme");
-            localStorage.setItem("easeup-theme", "light");
+
+            localStorage.setItem(
+                "easeup-theme",
+                "light"
+            );
+
+            themeButton.setAttribute(
+                "aria-pressed",
+                "false"
+            );
+
             return;
         }
 
-        root.setAttribute("data-theme", "dark");
-        localStorage.setItem("easeup-theme", "dark");
+        root.setAttribute(
+            "data-theme",
+            "dark"
+        );
+
+        localStorage.setItem(
+            "easeup-theme",
+            "dark"
+        );
+
+        themeButton.setAttribute(
+            "aria-pressed",
+            "true"
+        );
     }
 
     // =========================
