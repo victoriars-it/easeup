@@ -11,6 +11,9 @@ Garantir rastreabilidade, organização e controle das alterações realizadas d
 * Git
 * GitHub
 * Visual Studio Code
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
 
 ---
 
@@ -18,7 +21,7 @@ Garantir rastreabilidade, organização e controle das alterações realizadas d
 
 O projeto utiliza Git para controle de versão e GitHub para armazenamento remoto.
 
-Cada funcionalidade principal foi desenvolvida em uma branch específica, permitindo isolamento das alterações e validação antes da integração à branch principal.
+Cada funcionalidade foi desenvolvida em uma branch específica, permitindo isolamento das alterações, realização de testes locais e integração segura à branch principal.
 
 ### Branch Principal
 
@@ -31,13 +34,14 @@ Responsável por armazenar versões estáveis do projeto.
 ### Branches de Desenvolvimento
 
 ```plaintext
-feature/meditations
-feature/breathing
-feature/music
-feature/documentation
+feature/statistics
+feature/accessibility
+feature/audio-content
+feature/meditation-guidance
+feature/final-docs
 ```
 
-Cada branch representa uma funcionalidade específica desenvolvida de forma independente.
+Cada branch representa uma funcionalidade ou conjunto de melhorias desenvolvido de forma independente.
 
 ---
 
@@ -47,12 +51,6 @@ Cada branch representa uma funcionalidade específica desenvolvida de forma inde
 
 ```plaintext
 feat: implementar estrutura base e pagina inicial
-```
-
-### Navegação
-
-```plaintext
-feat: adicionar navegacao entre secoes
 ```
 
 ### Meditações Guiadas
@@ -73,6 +71,36 @@ feat: implementar exercicios de respiracao guiada
 feat: implementar biblioteca musical
 ```
 
+### Estatísticas
+
+```plaintext
+feat: adicionar estatisticas de uso
+```
+
+### Acessibilidade
+
+```plaintext
+feat: implementar melhorias de acessibilidade
+```
+
+### Conteúdo de Áudio
+
+```plaintext
+feat: adicionar conteudos de audio para meditacoes e biblioteca musical
+```
+
+### Orientações de Prática
+
+```plaintext
+feat: adicionar orientacoes de pratica para meditacoes
+```
+
+### Documentação
+
+```plaintext
+docs: atualizar documentacao do projeto
+```
+
 ---
 
 ## Processo de Integração
@@ -83,6 +111,7 @@ feat: implementar biblioteca musical
 4. Envio da branch para o GitHub.
 5. Merge na branch principal.
 6. Atualização da documentação.
+7. Versionamento das novas funcionalidades.
 
 ---
 
@@ -93,6 +122,8 @@ easeup/
 │
 ├── assets/
 │   └── audio/
+│       ├── meditation/
+│       └── music/
 │
 ├── docs/
 │   ├── backlog.md
@@ -105,3 +136,11 @@ easeup/
 │
 └── README.md
 ```
+
+---
+
+## Controle de Alterações
+
+Todas as alterações do projeto são registradas por meio de commits versionados e documentadas através do Changelog.
+
+A estratégia adotada permite rastrear funcionalidades implementadas, identificar modificações realizadas e manter histórico completo da evolução do EaseUp.

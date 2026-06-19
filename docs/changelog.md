@@ -65,3 +65,43 @@ Todas as mudanças relevantes do projeto serão registradas neste documento.
 * Sistema de favoritos.
 * Persistência de favoritos utilizando LocalStorage.
 * Estrutura preparada para integração de arquivos de áudio.
+
+## [1.4.0] - Estatísticas e Acessibilidade
+
+### Adicionado
+
+* Painel de estatísticas do usuário.
+* Contador de sessões concluídas.
+* Contador de conteúdos favoritados.
+* Navegação por teclado aprimorada.
+* Link de acessibilidade "Pular para o conteúdo principal".
+* Destaque visual para elementos em foco.
+* Compatibilidade com preferência de redução de movimento.
+* Melhorias de responsividade para dispositivos móveis.
+* Persistência das estatísticas utilizando LocalStorage.
+
+---
+
+## [1.5.0] - Conteúdo de Áudio e Orientações de Prática
+
+### Adicionado
+
+* Integração de arquivos de áudio reais para meditações.
+* Integração de arquivos de áudio reais para biblioteca musical.
+* Reprodução contínua (loop) para conteúdos sonoros.
+* Instruções de prática para cada meditação.
+* Ícones visuais para meditações, técnicas de respiração e músicas.
+* Atualização da biblioteca musical com conteúdos de relaxamento e bem-estar:
+
+  * Sons da Água
+  * Música Ambiente
+  * Sons Tibetanos
+  * Piano Relaxante
+  * Chuva Suave
+
+### Melhorado
+
+* Experiência de uso das meditações.
+* Organização dos conteúdos de áudio.
+* Interface visual dos cards de conteúdo.
+* Acessibilidade geral da plataforma.
