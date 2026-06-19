@@ -181,37 +181,41 @@
         {
             icon: "🧘",
             title: "Relaxamento Profundo",
+            category: "Relaxamento",
             description:
                 "Uma prática para desacelerar pensamentos e aliviar tensões do dia.",
-            duration: "5 minutos",
-            audio: "assets/audio/relaxamento.mp3"
+            duration: "6 minutos",
+            audio: "assets/audio/meditation/deep-relaxation.mp3"
         },
 
         {
             icon: "🧠",
             title: "Atenção Plena",
+            category: "Mindfulness",
             description:
                 "Desenvolva presença e foco através da observação consciente.",
-            duration: "7 minutos",
-            audio: "assets/audio/atencao-plena.mp3"
+            duration: "21 minutos",
+            audio: "assets/audio/meditation/mindfulness-meditation.mp3"
         },
 
         {
             icon: "🙏",
             title: "Gratidão",
+            category: "Gratidão",
             description:
                 "Fortaleça sentimentos positivos e reconhecimento das pequenas conquistas.",
             duration: "6 minutos",
-            audio: "assets/audio/gratidao.mp3"
+            audio: "assets/audio/meditation/gratitude-meditation.mp3"
         },
 
         {
             icon: "🌙",
             title: "Sono Tranquilo",
+            category: "Sono",
             description:
                 "Prática relaxante para preparar corpo e mente para dormir melhor.",
-            duration: "10 minutos",
-            audio: "assets/audio/sono.mp3"
+            duration: "30 minutos",
+            audio: "assets/audio/meditation/soothing-sleep.mp3"
         },
 
         {
@@ -219,8 +223,8 @@
             title: "Autocompaixão",
             description:
                 "Exercício voltado ao acolhimento emocional e autocuidado.",
-            duration: "8 minutos",
-            audio: "assets/audio/autocompaixao.mp3"
+            duration: "7 minutos",
+            audio: "assets/audio/meditation/selflove-meditation.mp3"
         }
     ];
 
@@ -259,11 +263,8 @@
                 ${meditation.duration}
             </p>
 
-            <p class="audio-status">
-                🎧 Conteúdo em preparação
-            </p>
-
-            <audio controls>
+ 
+            <audio controls loop>
                 <source
                     src="${meditation.audio}"
                     type="audio/mpeg"
@@ -515,42 +516,42 @@
             title: "Chuva Suave",
             description:
                 "Som contínuo de chuva para relaxamento e foco.",
-            duration: "60 min",
+            duration: "09 min",
             audio:
-                "assets/audio/music/chuva.mp3"
+                "assets/audio/music/meditative-rain.mp3"
         },
 
         {
-            id: "ocean",
-            cover: "🌊",
-            title: "Ondas do Oceano",
+            id: "water",
+            cover: "💦",
+            title: "Sons da Água",
             description:
-                "Movimento das ondas para sensação de tranquilidade.",
-            duration: "60 min",
+                "Áudio relaxante inspirado no fluxo natural da água.",
+            duration: "16 min",
             audio:
-                "assets/audio/music/oceano.mp3"
+                "assets/audio/music/water-sounds.mp3"
         },
 
         {
-            id: "forest",
-            cover: "🌲",
-            title: "Floresta Natural",
+            id: "ambient",
+            cover: "✨",
+            title: "Música Ambiente",
             description:
-                "Pássaros e sons da natureza.",
-            duration: "45 min",
+                "Trilha instrumental suave para momentos de calma, relaxamento e autocuidado.",
+            duration: "03 min",
             audio:
-                "assets/audio/music/floresta.mp3"
+                "assets/audio/music/relaxing-ambient.mp3"
         },
 
         {
-            id: "white-noise",
-            cover: "📻",
-            title: "Ruído Branco",
+            id: "tibetan",
+            cover: "🔔",
+            title: "Sons Tibetanos",
             description:
-                "Ideal para concentração e estudos.",
-            duration: "120 min",
+                "Tigelas tibetanas e frequências suaves para relaxamento e meditação.",
+            duration: "04 min",
             audio:
-                "assets/audio/music/ruido-branco.mp3"
+                "assets/audio/music/tibetan-bells.mp3"
         },
 
         {
@@ -559,9 +560,9 @@
             title: "Piano Relaxante",
             description:
                 "Música instrumental suave.",
-            duration: "50 min",
+            duration: "02 min",
             audio:
-                "assets/audio/music/piano.mp3"
+                "assets/audio/music/calmness-piano.mp3"
         }
     ];
 
@@ -604,12 +605,11 @@
                 🎵 Biblioteca em expansão
             </p>            
 
-            <audio controls>
+            <audio controls loop>
                 <source
                     src="${track.audio}"
                     type="audio/mpeg"
                 >
-                Seu navegador não suporta áudio.
             </audio>
 
             <button
