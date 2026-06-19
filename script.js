@@ -185,7 +185,9 @@
             description:
                 "Uma prática para desacelerar pensamentos e aliviar tensões do dia.",
             duration: "6 minutos",
-            audio: "assets/audio/meditation/deep-relaxation.mp3"
+            audio: "assets/audio/meditation/deep-relaxation.mp3",
+            instruction:
+                "Relaxe os ombros, feche os olhos e observe sua respiração por alguns minutos."
         },
 
         {
@@ -195,7 +197,9 @@
             description:
                 "Desenvolva presença e foco através da observação consciente.",
             duration: "21 minutos",
-            audio: "assets/audio/meditation/mindfulness-meditation.mp3"
+            audio: "assets/audio/meditation/mindfulness-meditation.mp3",
+            instruction:
+                "Sente-se confortavelmente, observe as sensações do corpo e os sons ao seu redor sem julgamento."
         },
 
         {
@@ -205,7 +209,9 @@
             description:
                 "Fortaleça sentimentos positivos e reconhecimento das pequenas conquistas.",
             duration: "6 minutos",
-            audio: "assets/audio/meditation/gratitude-meditation.mp3"
+            audio: "assets/audio/meditation/gratitude-meditation.mp3",
+            instruction:
+                "Pense em algo ou alguém pelo qual você é grato e permita-se sentir essa gratidão profundamente."
         },
 
         {
@@ -215,16 +221,21 @@
             description:
                 "Prática relaxante para preparar corpo e mente para dormir melhor.",
             duration: "30 minutos",
-            audio: "assets/audio/meditation/soothing-sleep.mp3"
+            audio: "assets/audio/meditation/soothing-sleep.mp3",
+            instruction:
+                "Sente-se confortavelmente e permita que seu corpo se prepare para o sono."
         },
 
         {
             icon: "💜",
             title: "Autocompaixão",
+            category: "Autocompaixão",
             description:
                 "Exercício voltado ao acolhimento emocional e autocuidado.",
             duration: "7 minutos",
-            audio: "assets/audio/meditation/selflove-meditation.mp3"
+            audio: "assets/audio/meditation/selflove-meditation.mp3",
+            instruction:
+                "Trate-se com gentileza e compaixão, como você faria com um amigo próximo."
         }
     ];
 
@@ -256,6 +267,10 @@
 
             <p class="meditation-description">
                 ${meditation.description}
+            </p>
+
+            <p class="meditation-instruction">
+                ${meditation.instruction}
             </p>
 
             <p class="meditation-duration">

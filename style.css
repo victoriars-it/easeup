@@ -270,6 +270,15 @@ button:focus-visible {
     color: var(--text-secondary);
 }
 
+.meditation-instruction {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--lavender);
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
 .meditation-duration {
     margin-top: 10px;
     font-size: 0.9rem;
