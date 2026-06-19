@@ -84,6 +84,12 @@ button:focus-visible {
     color: var(--accent);
 }
 
+.easeup-logo {
+    width: 32px;
+    height: 32px;
+    color: var(--accent);
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
@@ -446,4 +452,23 @@ button:focus-visible {
         transition: none !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* =========================
+   Conteúdo de áudio
+========================= */
+
+.audio-status {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.music-title,
+.meditation-title,
+.breathing-item-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }

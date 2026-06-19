@@ -179,6 +179,7 @@
 
     const meditations = [
         {
+            icon: "🧘",
             title: "Relaxamento Profundo",
             description:
                 "Uma prática para desacelerar pensamentos e aliviar tensões do dia.",
@@ -187,6 +188,7 @@
         },
 
         {
+            icon: "🧠",
             title: "Atenção Plena",
             description:
                 "Desenvolva presença e foco através da observação consciente.",
@@ -195,6 +197,7 @@
         },
 
         {
+            icon: "🙏",
             title: "Gratidão",
             description:
                 "Fortaleça sentimentos positivos e reconhecimento das pequenas conquistas.",
@@ -203,6 +206,7 @@
         },
 
         {
+            icon: "🌙",
             title: "Sono Tranquilo",
             description:
                 "Prática relaxante para preparar corpo e mente para dormir melhor.",
@@ -211,6 +215,7 @@
         },
 
         {
+            icon: "💜",
             title: "Autocompaixão",
             description:
                 "Exercício voltado ao acolhimento emocional e autocuidado.",
@@ -241,6 +246,7 @@
 
             card.innerHTML = `
             <h3 class="meditation-title">
+                ${meditation.icon}
                 ${meditation.title}
             </h3>
 
@@ -251,6 +257,10 @@
             <p class="meditation-duration">
                 Duração estimada:
                 ${meditation.duration}
+            </p>
+
+            <p class="audio-status">
+                🎧 Conteúdo em preparação
             </p>
 
             <audio controls>
@@ -301,6 +311,7 @@
 
     const breathingTechniques = [
         {
+            icon: "🌬️",
             title: "Respiração 4-7-8",
             description:
                 "Técnica indicada para relaxamento. Inspire por 4 segundos, segure por 7 e expire por 8.",
@@ -311,6 +322,7 @@
             ]
         },
         {
+            icon: "📦",
             title: "Respiração Quadrada",
             description:
                 "Também conhecida como Box Breathing. Ajuda no foco e na regulação emocional.",
@@ -322,6 +334,7 @@
             ]
         },
         {
+            icon: "🫁",
             title: "Respiração Diafragmática",
             description:
                 "Estimula a respiração profunda usando o abdômen, auxiliando na redução da ansiedade.",
@@ -332,6 +345,7 @@
             ]
         },
         {
+            icon: "😌",
             title: "Respiração Calmante 5-5",
             description:
                 "Prática simples e equilibrada: inspire por 5 segundos e expire por 5 segundos.",
@@ -341,6 +355,7 @@
             ]
         },
         {
+            icon: "⚡",
             title: "Respiração Energizante",
             description:
                 "Técnica curta para recuperar presença e disposição durante o dia.",
@@ -371,6 +386,7 @@
 
             button.innerHTML = `
                 <h3 class="breathing-item-title">
+                    ${technique.icon}
                     ${technique.title}
                 </h3>
 
@@ -495,6 +511,7 @@
     const musicTracks = [
         {
             id: "rain",
+            cover: "🌧️",
             title: "Chuva Suave",
             description:
                 "Som contínuo de chuva para relaxamento e foco.",
@@ -505,6 +522,7 @@
 
         {
             id: "ocean",
+            cover: "🌊",
             title: "Ondas do Oceano",
             description:
                 "Movimento das ondas para sensação de tranquilidade.",
@@ -515,6 +533,7 @@
 
         {
             id: "forest",
+            cover: "🌲",
             title: "Floresta Natural",
             description:
                 "Pássaros e sons da natureza.",
@@ -525,6 +544,7 @@
 
         {
             id: "white-noise",
+            cover: "📻",
             title: "Ruído Branco",
             description:
                 "Ideal para concentração e estudos.",
@@ -535,6 +555,7 @@
 
         {
             id: "piano",
+            cover: "🎹",
             title: "Piano Relaxante",
             description:
                 "Música instrumental suave.",
@@ -567,6 +588,7 @@
 
             card.innerHTML = `
             <h3 class="music-title">
+                ${track.cover}
                 ${track.title}
             </h3>
 
@@ -577,6 +599,10 @@
             <p class="music-duration">
                 Duração: ${track.duration}
             </p>
+
+            <p class="audio-status">
+                🎵 Biblioteca em expansão
+            </p>            
 
             <audio controls>
                 <source
