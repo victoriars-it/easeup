@@ -51,11 +51,15 @@
         <!-- Seção inicial de apresentação da plataforma -->
         <section id="section-home" class="fade-in" aria-labelledby="home-title">
             <div class="gradient-bg rounded-3xl p-8 md:p-12 text-center mb-8">
-                <p class="text-3xl" aria-hidden="true">👋</p>
 
-                <h2 id="home-title" class="font-bold text-4xl mt-2">
-                    Olá, seja bem-vindo(a)
+                <h2 id="home-title" class="font-semibold text-4xl mt-2">
+                    Este momento é seu.
                 </h2>
+
+                <!-- Botão que abre o modal para personalizar a saudação do usuário -->
+                <button id="change-name-button" class="change-name-button" type="button">
+                    Alterar nome
+                </button>
 
                 <p class="hero-subtitle">
                     Respire. Desacelere. Cuide de você.
@@ -103,7 +107,7 @@
                         <i data-lucide="music"></i>
                     </div>
 
-                    <h3 class="font-bold text-xl mb-3">Biblioteca Musical</h3>
+                    <h3 class="font-bold text-xl mb-3">Sons para Relaxar</h3>
 
                     <p class="text-base text-secondary">
                         Sons relaxantes para acompanhar sua jornada de autocuidado.
@@ -138,15 +142,15 @@
                     </div>
 
                     <div class="stat-card">
-                        <p class="text-2xl font-bold stat-value">ODS 03</p>
-                        <p class="text-sm mt-2 text-secondary">Saúde e Bem-Estar</p>
+                        <p class="text-2xl font-bold stat-value">Equilíbrio</p>
+                        <p class="text-sm mt-2 text-secondary">Corpo e mente</p>
                     </div>
                 </div>
             </section>
 
             <section class="app-card p-6 mt-6" aria-labelledby="progress-title">
                 <h3 id="progress-title" class="font-bold text-xl text-center mb-5">
-                    Seu Progresso
+                    Sua Jornada
                 </h3>
 
                 <div class="grid md:grid-cols-3 gap-4" id="statistics-container">
@@ -156,7 +160,7 @@
                         </p>
 
                         <p class="text-secondary font-medium">
-                            Sessões concluídas
+                            Momentos de autocuidado
                         </p>
                     </div>
 
@@ -176,7 +180,7 @@
                         </p>
 
                         <p class="text-secondary font-medium">
-                            Bem-estar em construção
+                            Seu ritmo é suficiente
                         </p>
                     </div>
                 </div>
@@ -238,7 +242,7 @@
         <!-- Biblioteca musical -->
         <section id="section-music" class="section-hidden fade-in" aria-labelledby="music-title">
             <h2 id="music-title" class="font-bold text-2xl mb-4">
-                Biblioteca Musical
+                Sons para Relaxar
             </h2>
 
             <p class="text-secondary mb-6">
@@ -255,6 +259,27 @@
     <footer class="text-center text-secondary pb-8 px-6">
         <p>EaseUp — Atividade Extensionista III | Tecnologia Aplicada à Inclusão Digital</p>
     </footer>
+
+    <!-- Modal para personalização do nome do usuário -->
+    <div id="name-modal" class="modal-overlay section-hidden" role="dialog" aria-modal="true"
+        aria-labelledby="name-modal-title">
+        <div class="name-modal">
+            <h3 id="name-modal-title">Como você gostaria de ser chamado(a)?</h3>
+
+            <!-- Campo utilizado para capturar o nome e salvar no LocalStorage -->
+            <input id="user-name-input" class="name-input" type="text" placeholder="Digite seu nome" />
+
+            <div class="modal-actions">
+                <button id="cancel-name-button" class="btn-secondary" type="button">
+                    Cancelar
+                </button>
+
+                <button id="save-name-button" class="btn-primary" type="button">
+                    Salvar
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Notificação visual utilizada para confirmar ações do usuário -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>

@@ -54,6 +54,24 @@
     const toast =
         document.getElementById("toast");
 
+    const changeNameButton =
+        document.getElementById("change-name-button");
+
+    const homeTitle =
+        document.getElementById("home-title");
+
+    const nameModal =
+        document.getElementById("name-modal");
+
+    const userNameInput =
+        document.getElementById("user-name-input");
+
+    const saveNameButton =
+        document.getElementById("save-name-button");
+
+    const cancelNameButton =
+        document.getElementById("cancel-name-button");
+
     // =========================
     // Mensagens motivacionais
     // =========================
@@ -87,6 +105,58 @@
         setTimeout(() => {
             toast.classList.remove("show");
         }, 3000);
+    }
+
+    // =========================
+    // Personalização do nome
+    // Permite salvar o nome do usuário
+    // no LocalStorage para uma saudação.
+    // =========================
+
+    function updateWelcomeMessage() {
+        const savedName =
+            localStorage.getItem("easeup-user-name");
+
+        if (savedName) {
+            homeTitle.textContent =
+                `${savedName}, este momento é seu.`;
+        }
+    }
+
+    // Exibe o modal e posiciona o foco
+    // diretamente no campo de entrada.
+    function openNameModal() {
+        nameModal.classList.remove("section-hidden");
+        userNameInput.focus();
+    }
+
+    // Fecha o modal e limpa o campo
+    // utilizado durante a edição.
+    function closeNameModal() {
+        nameModal.classList.add("section-hidden");
+        userNameInput.value = "";
+    }
+
+    // Salva o nome informado,
+    // atualiza a saudação principal
+    // e persiste a informação no navegador.
+    function saveUserName() {
+        const formattedName =
+            userNameInput.value.trim();
+
+        if (!formattedName) return;
+
+        localStorage.setItem(
+            "easeup-user-name",
+            formattedName
+        );
+
+        updateWelcomeMessage();
+        closeNameModal();
+
+        showToast(
+            "✓ Nome personalizado com sucesso!"
+        );
     }
 
     // =========================
@@ -635,11 +705,7 @@
 
             <p class="music-duration">
                 Duração: ${track.duration}
-            </p>
-
-            <p class="audio-status">
-                🎵 Biblioteca em expansão
-            </p>            
+            </p>      
 
             <audio controls loop>
                 <source
@@ -662,6 +728,12 @@
 
         setupFavoriteButtons();
     }
+
+    // =========================
+    // Sistema de favoritos
+    // Permite salvar e remover
+    // conteúdos da biblioteca musical.
+    // =========================
 
     function setupFavoriteButtons() {
         const buttons =
@@ -709,6 +781,10 @@
     // Estatísticas do usuário
     // =========================
 
+    // Atualiza os indicadores de progresso
+    // exibidos na página inicial com base
+    // nos dados armazenados localmente.
+
     function updateStatistics() {
         if (!sessionsStat || !favoritesStat) {
             return;
@@ -736,9 +812,13 @@
     }
 
     // =========================
-    // Inicialização
+    // Inicialização da aplicação
+    // Carrega preferências salvas,
+    // renderiza conteúdos dinâmicos
+    // e registra eventos da interface.
     // =========================
 
+    updateWelcomeMessage();
     showRandomMessage();
     applySavedTheme();
     setupNavigation();
@@ -751,6 +831,35 @@
 
     themeButton.addEventListener("click", toggleTheme);
 
-    // Converte os ícones declarados no HTML em SVGs.
+    changeNameButton.addEventListener(
+        "click",
+        openNameModal
+    );
+
+    saveNameButton.addEventListener(
+        "click",
+        saveUserName
+    );
+
+    cancelNameButton.addEventListener(
+        "click",
+        closeNameModal
+    );
+
+    userNameInput.addEventListener(
+        "keydown",
+        (event) => {
+            if (event.key === "Enter") {
+                saveUserName();
+            }
+
+            if (event.key === "Escape") {
+                closeNameModal();
+            }
+        }
+    );
+
+    // Converte os ícones declarados no HTML 
+    // em SVGs da biblioteca Lucide.
     lucide.createIcons();
 })();
