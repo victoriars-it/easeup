@@ -27,11 +27,11 @@
 * [x] Persistência do nome utilizando LocalStorage
 * [x] Saudação personalizada na tela inicial
 * [x] Favicon personalizado da aplicação
+* [x] Feedback sonoro nos exercícios de respiração
+* [x] Som de sino para indicar transições entre inspiração, retenção e expiração
 
 ---
 
 ## Melhorias Futuras
 
-### Prioridade Alta
-
-* [ ] Adicionar sons de sino para indicar os momentos de inspiração, retenção e expiração nos exercícios de respiração.
+Nenhuma melhoria futura pendente no escopo final da Atividade Extensionista III.

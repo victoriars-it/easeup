@@ -156,3 +156,19 @@ Todas as mudanças relevantes do projeto serão registradas neste documento.
 ### Corrigido
 
 * Fechamento automático do modal após confirmação do nome.
+
+---
+
+## [1.8.0] - Feedback Sonoro da Respiração
+
+### Adicionado
+
+* Feedback sonoro nos exercícios de respiração guiada.
+* Som de sino suave para indicar a transição entre as fases de inspiração, retenção e expiração.
+* Arquivo de áudio dedicado para interface em `assets/audio/ui/`.
+
+### Melhorado
+
+* Experiência de uso dos exercícios de respiração.
+* Orientação do usuário durante as práticas respiratórias.
+* Suporte multimídia da plataforma.

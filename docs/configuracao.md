@@ -41,6 +41,7 @@ feature/meditation-guidance
 feature/visual-polish
 feature/user-name
 feature/favicon
+feature/breathing-sounds
 feature/final-docs
 ```
 
@@ -115,6 +116,11 @@ feat: adicionar personalizacao do nome do usuario
 ```plaintext
 feat: adicionar favicon da aplicacao
 ```
+### Feedback Sonoro
+
+```plaintext
+feat: adicionar feedback sonoro aos exercicios de respiracao
+```
 
 ### Documentação
 
@@ -145,6 +151,8 @@ easeup/
 │   ├── audio/
 │   │   ├── meditation/
 │   │   └── music/
+|   |   └── ui/
+│   │       └── bell.mp3
 │   │
 │   └── icons/
 │       └── favicon.svg

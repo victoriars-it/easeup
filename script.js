@@ -73,6 +73,15 @@
         document.getElementById("cancel-name-button");
 
     // =========================
+    // Feedback sonoro da respiração
+    // =========================
+
+    const breathingBell =
+        new Audio("assets/audio/ui/bell.mp3");
+
+    breathingBell.volume = 0.4;
+
+    // =========================
     // Mensagens motivacionais
     // =========================
 
@@ -105,6 +114,20 @@
         setTimeout(() => {
             toast.classList.remove("show");
         }, 3000);
+    }
+
+    // =========================
+    // Reproduz o sino utilizado para
+    // sinalizar a mudança de etapa 
+    // durante os exercícios respiratórios.
+    // =========================
+    function playBreathingBell() {
+        breathingBell.currentTime = 0;
+
+        breathingBell.play().catch(() => {
+            // Ignora possíveis bloqueios de reprodução
+            // automática aplicados pelo navegador.
+        });
     }
 
     // =========================
@@ -578,6 +601,8 @@
 
         breathingPhase.textContent =
             currentPhase.label;
+
+        playBreathingBell();
 
         breathingPhaseIndex++;
 
