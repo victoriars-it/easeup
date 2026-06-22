@@ -134,3 +134,25 @@ Todas as mudanças relevantes do projeto serão registradas neste documento.
 
 * Correção do gerenciamento de favoritos utilizando LocalStorage.
 * Atualização consistente das estatísticas após favoritar e desfavoritar conteúdos.
+
+--- 
+
+## [1.7.0] - Personalização e Identidade Visual
+
+### Adicionado
+
+* Personalização do nome do usuário através de modal dedicado.
+* Persistência do nome utilizando LocalStorage.
+* Saudação personalizada na tela inicial.
+* Favicon personalizado utilizando a identidade visual do EaseUp.
+
+### Melhorado
+
+* Experiência de boas-vindas da plataforma.
+* Identidade visual da aplicação.
+* Consistência entre a marca exibida na interface e na aba do navegador.
+* Refinamento dos textos da página inicial para uma comunicação mais acolhedora.
+
+### Corrigido
+
+* Fechamento automático do modal após confirmação do nome.

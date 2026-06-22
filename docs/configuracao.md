@@ -39,6 +39,8 @@ feature/accessibility
 feature/audio-content
 feature/meditation-guidance
 feature/visual-polish
+feature/user-name
+feature/favicon
 feature/final-docs
 ```
 
@@ -102,6 +104,18 @@ feat: adicionar orientacoes de pratica para meditacoes
 feat: refinar interface e experiencia do usuario
 ```
 
+### Personalização do Usuário
+
+```plaintext
+feat: adicionar personalizacao do nome do usuario
+```
+
+### Identidade Visual
+
+```plaintext
+feat: adicionar favicon da aplicacao
+```
+
 ### Documentação
 
 ```plaintext
@@ -128,9 +142,12 @@ docs: atualizar documentacao do projeto
 easeup/
 │
 ├── assets/
-│   └── audio/
-│       ├── meditation/
-│       └── music/
+│   ├── audio/
+│   │   ├── meditation/
+│   │   └── music/
+│   │
+│   └── icons/
+│       └── favicon.svg
 │
 ├── docs/
 │   ├── backlog.md

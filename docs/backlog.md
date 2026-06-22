@@ -23,6 +23,10 @@
 * [x] Cards com bordas mais arredondadas
 * [x] Notificação visual do tipo toast para confirmação de sessão concluída
 * [x] Correção do gerenciamento de favoritos
+* [x] Personalização do nome do usuário
+* [x] Persistência do nome utilizando LocalStorage
+* [x] Saudação personalizada na tela inicial
+* [x] Favicon personalizado da aplicação
 
 ---
 
@@ -30,8 +34,4 @@
 
 ### Prioridade Alta
 
-* [ ] Personalizar o nome do usuário na mensagem de boas-vindas.
-* [ ] Adicionar favicon (ícone da aplicação) na aba do navegador.
 * [ ] Adicionar sons de sino para indicar os momentos de inspiração, retenção e expiração nos exercícios de respiração.
-
-
