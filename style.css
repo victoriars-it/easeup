@@ -562,8 +562,11 @@ button:focus-visible {
     z-index: 60;
 }
 
-/* Permite esconder o modal quando a classe
-   section-hidden for adicionada pelo JavaScript */
+/* =========================
+   Controle de visibilidade
+   do modal de nome.
+========================= */
+
 .modal-overlay.section-hidden {
     display: none;
 }

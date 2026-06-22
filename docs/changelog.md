@@ -66,6 +66,8 @@ Todas as mudanças relevantes do projeto serão registradas neste documento.
 * Persistência de favoritos utilizando LocalStorage.
 * Estrutura preparada para integração de arquivos de áudio.
 
+---
+
 ## [1.4.0] - Estatísticas e Acessibilidade
 
 ### Adicionado

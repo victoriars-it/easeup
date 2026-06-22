@@ -117,10 +117,11 @@
     }
 
     // =========================
-    // Reproduz o sino utilizado para
-    // sinalizar a mudança de etapa 
-    // durante os exercícios respiratórios.
+    // Reproduz um sino suave para
+    // indicar a transição entre as
+    // fases dos exercícios respiratórios.
     // =========================
+
     function playBreathingBell() {
         breathingBell.currentTime = 0;
 
@@ -884,7 +885,7 @@
         }
     );
 
-    // Converte os ícones declarados no HTML 
-    // em SVGs da biblioteca Lucide.
+    //// Inicializa os ícones da biblioteca
+    // Lucide utilizados na interface.
     lucide.createIcons();
 })();

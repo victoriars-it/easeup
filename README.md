@@ -28,7 +28,7 @@ A plataforma contribui para esse objetivo ao incentivar práticas de relaxamento
 
 ## Evolução do Projeto
 
-O EaseUp foi iniciado na Atividade Extensionista II e evoluído na Atividade Extensionista III.
+O EaseUp foi iniciado na Atividade Extensionista I e aprimorado ao longo das Atividades Extensionistas II e III.
 
 Principais evoluções implementadas:
 
@@ -151,7 +151,13 @@ Toda evolução da aplicação é registrada por meio de:
 
 ## Autora
 
-Victoria Resende da Silva - RU:  4612869
-Curso de Engenharia de Software – UNINTER
-Atividade Extensionista III
+## Autora
+
+**Victoria Resende da Silva**
+
+**RU:** 4612869
+
+**Curso:** Engenharia de Software – UNINTER
+
+**Disciplina:** Atividade Extensionista III
 
