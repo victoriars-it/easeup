@@ -105,3 +105,32 @@ Todas as mudanças relevantes do projeto serão registradas neste documento.
 * Organização dos conteúdos de áudio.
 * Interface visual dos cards de conteúdo.
 * Acessibilidade geral da plataforma.
+
+### Alterado
+
+* Atualização da seleção musical da biblioteca.
+* Substituição de conteúdos sonoros por novas faixas de relaxamento e meditação.
+
+---
+
+## [1.6.0] - Refinamento Visual e Experiência do Usuário
+
+### Adicionado
+
+* Sistema de notificações visuais (toast) para confirmação de sessões concluídas.
+* Feedback visual não intrusivo para ações do usuário.
+* Compatibilidade das notificações com tecnologias assistivas através de `aria-live`.
+
+### Alterado
+
+* Refinamento visual da tela inicial.
+* Ajuste da hierarquia visual dos títulos e conteúdos.
+* Aprimoramento da experiência de navegação e leitura.
+* Aplicação de transparência suave nos cartões da interface.
+* Aumento do arredondamento dos cards para uma experiência mais acolhedora.
+* Aprimoramento visual dos temas claro e escuro.
+
+### Corrigido
+
+* Correção do gerenciamento de favoritos utilizando LocalStorage.
+* Atualização consistente das estatísticas após favoritar e desfavoritar conteúdos.

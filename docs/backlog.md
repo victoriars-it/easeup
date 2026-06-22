@@ -18,6 +18,11 @@
 * [x] Link "Pular para o conteúdo principal"
 * [x] Compatibilidade com redução de movimento
 * [x] Responsividade para dispositivos móveis
+* [x] Refinamento visual da tela inicial
+* [x] Ajuste de hierarquia visual dos cards
+* [x] Cards com bordas mais arredondadas
+* [x] Notificação visual do tipo toast para confirmação de sessão concluída
+* [x] Correção do gerenciamento de favoritos
 
 ---
 
@@ -26,9 +31,7 @@
 ### Prioridade Alta
 
 * [ ] Personalizar o nome do usuário na mensagem de boas-vindas.
-* [ ] Adicionar sons de sino para indicar os momentos de inspiração, retenção e expiração nos exercícios de respiração.
-* [ ] Reestruturar o layout das meditações para um formato mais interativo, permitindo selecionar e alternar entre conteúdos sem utilizar listas extensas.
 * [ ] Adicionar favicon (ícone da aplicação) na aba do navegador.
-
+* [ ] Adicionar sons de sino para indicar os momentos de inspiração, retenção e expiração nos exercícios de respiração.
 
 

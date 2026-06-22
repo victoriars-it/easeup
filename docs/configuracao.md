@@ -38,6 +38,7 @@ feature/statistics
 feature/accessibility
 feature/audio-content
 feature/meditation-guidance
+feature/visual-polish
 feature/final-docs
 ```
 
@@ -93,6 +94,12 @@ feat: adicionar conteudos de audio para meditacoes e biblioteca musical
 
 ```plaintext
 feat: adicionar orientacoes de pratica para meditacoes
+```
+
+### Refinamento Visual
+
+```plaintext
+feat: refinar interface e experiencia do usuario
 ```
 
 ### Documentação

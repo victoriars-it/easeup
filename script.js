@@ -51,6 +51,9 @@
     const favoritesStat =
         document.getElementById("favorites-stat");
 
+    const toast =
+        document.getElementById("toast");
+
     // =========================
     // Mensagens motivacionais
     // =========================
@@ -66,6 +69,24 @@
     function showRandomMessage() {
         const randomIndex = Math.floor(Math.random() * messages.length);
         motivationalMessage.textContent = messages[randomIndex];
+    }
+
+    // =========================
+    // Toast de confirmação
+    // Exibe uma mensagem temporária
+    // para informar ações concluídas.
+    // =========================
+
+    function showToast(message) {
+        if (!toast) return;
+
+        toast.textContent = message;
+
+        toast.classList.add("show");
+
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3000);
     }
 
     // =========================
@@ -311,8 +332,8 @@
 
                     updateStatistics();
 
-                    alert(
-                        "Sessão registrada com sucesso!"
+                    showToast(
+                        "✓ Sessão registrada com sucesso!"
                     );
                 }
             );
@@ -478,8 +499,8 @@
 
         const currentPhase =
             selectedTechnique.phases[
-                breathingPhaseIndex %
-                    selectedTechnique.phases.length
+            breathingPhaseIndex %
+            selectedTechnique.phases.length
             ];
 
         breathingCircle.className = "breathing-circle";
@@ -659,10 +680,13 @@
                         favoriteTracks.indexOf(trackId);
 
                     if (index >= 0) {
-                        favoriteTracks.splice(
-                            index,
-                            1
-                        );
+                        const updatedFavorites =
+                            favoriteTracks.filter(
+                                (favorite) => favorite !== trackId
+                            );
+
+                        favoriteTracks.length = 0;
+                        favoriteTracks.push(...updatedFavorites);
                     } else {
                         favoriteTracks.push(trackId);
                     }

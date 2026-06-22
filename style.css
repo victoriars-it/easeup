@@ -9,7 +9,7 @@
     --accent: #7c6bc4;
     --accent-soft: #a594e0;
     --bg: #f4f0fa;
-    --card: #ffffff;
+    --card: rgba(255, 255, 255, 0.86);
     --text: #2d2d3a;
     --text-secondary: #6b6b80;
 }
@@ -25,7 +25,7 @@
     --accent: #a594e0;
     --accent-soft: #7c6bc4;
     --bg: #1a1625;
-    --card: #252035;
+    --card: rgba(37, 32, 53, 0.92);
     --text: #e8e0f0;
     --text-secondary: #a8a8c0;
 }
@@ -135,20 +135,29 @@ button:focus-visible {
     background: linear-gradient(135deg, #2a2440, #1e2a3a, #251f3a);
 }
 
+.hero-subtitle {
+    margin-top: 12px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.4;
+}
+
 /* =========================
    Cards e botões
 ========================= */
 
 .app-card {
     background: var(--card);
-    border-radius: 16px;
-    box-shadow: 0 2px 16px rgba(124, 107, 196, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(124, 107, 196, 0.10);
+    backdrop-filter: blur(10px);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .app-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(124, 107, 196, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(124, 107, 196, 0.14);
 }
 
 .text-secondary {
@@ -207,10 +216,14 @@ button:focus-visible {
 ========================= */
 
 .stat-card {
-    background: var(--card);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 18px;
     padding: 20px;
     text-align: center;
+}
+
+[data-theme="dark"] .stat-card {
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .stat-value {
@@ -251,7 +264,7 @@ button:focus-visible {
 
 .meditation-item {
     background: var(--card);
-    border-radius: 16px;
+    border-radius: 24px;
     padding: 20px;
     box-shadow: 0 2px 16px rgba(124, 107, 196, 0.08);
 }
@@ -301,7 +314,7 @@ button:focus-visible {
 .breathing-item {
     background: var(--card);
     border: none;
-    border-radius: 16px;
+    border-radius: 24px;
     padding: 20px;
     text-align: left;
     box-shadow: 0 2px 16px rgba(124, 107, 196, 0.08);
@@ -381,7 +394,7 @@ button:focus-visible {
 
 .music-item {
     background: var(--card);
-    border-radius: 16px;
+    border-radius: 24px;
     padding: 20px;
     box-shadow: 0 2px 16px rgba(124, 107, 196, 0.08);
 }
@@ -480,4 +493,36 @@ button:focus-visible {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+/* =========================
+   Toast de confirmação
+========================= */
+
+.toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(124, 107, 196, 0.24);
+    font-weight: 600;
+
+    opacity: 0;
+    transform: translateY(12px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 50;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
 }
