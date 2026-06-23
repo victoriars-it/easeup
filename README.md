@@ -10,6 +10,16 @@ Este projeto foi desenvolvido como parte da Atividade Extensionista III do curso
 
 ---
 
+## Acesso Online
+
+O EaseUp está disponível online através do GitHub Pages:
+
+🔗 https://victoriars-it.github.io/easeup/ 
+
+Não é necessário realizar instalação. Basta acessar o link em qualquer navegador.
+
+---
+
 ## Objetivo
 
 Promover o bem-estar emocional e incentivar práticas de autocuidado por meio de recursos digitais acessíveis, intuitivos e responsivos.
@@ -103,12 +113,12 @@ easeup/
 
 ---
 
-## Como Executar
+## Como Executar Localmente
 
 1. Clone o repositório:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/victoriars-it/easeup.git 
 ```
 
 2. Abra a pasta do projeto.
@@ -119,7 +129,7 @@ git clone <url-do-repositorio>
 index.html
 ```
 
-em qualquer navegador moderno.
+em qualquer navegador moderno ou utilize a extensão Live Server do Visual Studio Code para uma melhor experiência de desenvolvimento.
 
 ---
 
@@ -148,8 +158,6 @@ Toda evolução da aplicação é registrada por meio de:
 * Documento de Controle de Configuração
 
 ---
-
-## Autora
 
 ## Autora
 
